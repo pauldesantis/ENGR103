@@ -11,9 +11,9 @@ void loop()
 {
   if (digitalRead(sensor) == HIGH)
   {
-    digitalWrite(led, HIGH);
-    delay(300);
     digitalWrite(led, LOW);
+    delay(300);
+    digitalWrite(led, HIGH);
     delay(10);
   }
   else
