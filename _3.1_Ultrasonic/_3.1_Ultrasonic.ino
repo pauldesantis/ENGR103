@@ -1,5 +1,5 @@
 const int triggerPin = 2; //Sets the trigger pin on the Sensor
-const int echoPin = 5; //Sets the echo pin on the Sensor
+const int echoPin = 6; //Sets the echo pin on the Sensor
 
 void setup()
 {

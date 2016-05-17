@@ -42,13 +42,20 @@ void loop() {
       // passive buzzer tone
      case 3:
      int k;
-     for(k = 200; k<=800; k++){
+     for(k = 200; k<=800; k= k+5){
         tone(passive,k);
         delay(250);
         Serial.print("k = ");
         Serial.println(k);
         delay(5);
       }
+       for(k = 800; k>=200; k= k-5){
+        tone(passive,k);
+        delay(250);
+        Serial.print("k = ");
+        Serial.println(k);
+        delay(5);
+       }
       delay(1000);
       
       break;
