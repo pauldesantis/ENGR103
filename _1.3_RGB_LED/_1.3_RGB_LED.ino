@@ -1,9 +1,9 @@
-int RedPin = 3;    // RED pin of the LED to PWM pin 4
-int GreenPin = 5;  // GREEN pin of the LED to PWM pin 5
-int BluePin = 6;   // BLUE pin of the LED to PWM pin 6
-int brightness = 0; // LED brightness
-int increment = 5;  // brightness increment
-int color = 1;    // cycles through color
+int RedPin = 3;      // RED pin of the LED to PWM pin 4
+int GreenPin = 5;    // GREEN pin of the LED to PWM pin 5
+int BluePin = 6;     // BLUE pin of the LED to PWM pin 6
+int brightness = 0;  // LED brightness
+int increment = 5;   // brightness increment
+int color = 1;       // cycles through color
 
 
 void setup() {
@@ -14,13 +14,7 @@ void setup() {
 }
 
 void loop() {
-/* brightness = brightness + increment;  // increment brightness for next loop iteration
-if (brightness <= 0 || brightness >= 255)    // reverse the direction of the fading
-  {
-    increment = -increment;
-  }
-  brightness = constrain(brightness, 0, 255);
-  */
+
 switch (color) {
   case 1: // red
   analogWrite(RedPin,0);
@@ -28,37 +22,43 @@ switch (color) {
   analogWrite(BluePin,255);
   color++;
   break;
-  case 2: // orange / yellow
+  case 2: // orange
   analogWrite(RedPin,0);
   analogWrite(GreenPin,150);
   analogWrite(BluePin,255);
   color++;
   break;
-  case 3: // Green
+  case 3: // yellow
+  analogWrite(RedPin,0);
+  analogWrite(GreenPin,0);
+  analogWrite(BluePin,255);
+  color++;
+  break;
+  case 4: // Green
   analogWrite(RedPin,255);
   analogWrite(GreenPin,0);
   analogWrite(BluePin,255);
   color++;
   break;
-  case 4: // Blue
+  case 5: // Blue
   analogWrite(RedPin,255);
   analogWrite(GreenPin,255);
   analogWrite(BluePin,0);
   color++;
   break;
-  case 5: // Indigo
+  case 6: // Indigo
   analogWrite(RedPin,150);
   analogWrite(GreenPin,255);
   analogWrite(BluePin,0);
   color++;
   break;
-  case 6: // Purple / Violet
-  analogWrite(RedPin,0);
+  case 7: // Purple / Violet
+  analogWrite(RedPin,20);
   analogWrite(GreenPin,255);
   analogWrite(BluePin,0);
   color++;
   break;
-  case 7:
+  case 8:
   color = 1;
   break;
 }
